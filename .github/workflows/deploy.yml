@@ -44,6 +44,7 @@ jobs:
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             cd ${{secrets.TARGET_DIR}}
+            nvm use
             yarn
             NODE_OPTIONS="--max-old-space-size=4096" yarn build
             pm2 stop cosmeticode-site || true
