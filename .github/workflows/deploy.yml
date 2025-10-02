@@ -47,6 +47,7 @@ jobs:
             nvm use
             yarn
             NODE_OPTIONS="--max-old-space-size=4096" yarn build
+            nvm use default
             pm2 stop cosmeticode-site || true
             pm2 delete cosmeticode-site || true
             # Iniciar o servidor com o PM2
