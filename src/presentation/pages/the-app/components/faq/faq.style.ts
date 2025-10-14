@@ -1,47 +1,65 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
-    background-color: ${({ theme }) => theme.colors.black};
-    padding-block: 6rem 4.62rem;
-`
+  background-color: ${({ theme }) => theme.colors.black};
+  padding-block: 6rem 4.62rem;
+
+  @media (max-width: 768px) {
+    margin-top: 3rem;
+  }
+`;
 
 export const Content = styled.div`
-    max-width: 66.625rem;
-    margin-inline: auto;
-`
+  max-width: 66.625rem;
+  margin-inline: auto;
+`;
 
 export const Header = styled.div`
-    > hr {
-        margin-block-start: 2.5rem;
-    }
-`
+  hr {
+    margin-block-start: 2.5rem;
+  }
+`;
 
 export const HeaderContent = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-`
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 
 export const Title = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    font-weight: 700;
-    letter-spacing: -0.06rem;
-    color: ${({ theme }) => theme.colors['primary-light']};
-    font-size: ${({ theme }) => theme['font-size'][60]};
-    line-height: ${({ theme }) => theme['line-height'].compact};
+  font-weight: 700;
+  letter-spacing: -0.06rem;
+  color: ${({ theme }) => theme.colors["primary-light"]};
+  font-size: ${({ theme }) => theme["font-size"][60]};
+  line-height: ${({ theme }) => theme["line-height"].compact};
 
-    > span {
-        letter-spacing: -0.1125rem;
-        font-size: ${({ theme }) => theme['font-size'][80]};
-        line-height: ${({ theme }) => theme['line-height'].compact};
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme["font-size"][50]};
+  }
+
+  > span {
+    letter-spacing: -0.1125rem;
+    font-size: ${({ theme }) => theme["font-size"][80]};
+    line-height: ${({ theme }) => theme["line-height"].compact};
+
+    @media (max-width: 768px) {
+      font-size: ${({ theme }) => theme["font-size"][60]};
     }
-`
+  }
+`;
 
 export const FaqContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+`;

@@ -15,6 +15,10 @@ export const Content = styled.div<SpacingProps>`
   > div {
     display: flex;
     margin-inline-start: ${({ $spacing }) => `-${$spacing}rem`};
+
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
 `;
 
@@ -24,6 +28,16 @@ export const Item = styled.div<SpacingProps>`
   flex-grow: 0;
   flex-basis: ${({ $perView }) => `calc(100% / ${$perView})`};
   padding-left: ${({ $spacing }) => `${$spacing}rem`};
+
+  @media (max-width: 768px) {
+    padding-left: 0;
+    width: 100%;
+    margin-right: 13px;
+  }
+
+  &:last-child {
+    padding-left: ${({ $spacing }) => `${$spacing}rem`};
+  }
 `;
 
 type ActionsProps = {
@@ -35,8 +49,12 @@ export const Actions = styled.div<ActionsProps>`
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
-  margin-block-start: ${({ $actionsMarginTop }) =>
-    $actionsMarginTop ? `${$actionsMarginTop}rem` : "2rem"};
+  margin-block-start: ${({ $actionsMarginTop }) => ($actionsMarginTop ? `${$actionsMarginTop}rem` : "2rem")};
+
+  @media (max-width: 768px) {
+    padding-left: 0;
+    width: 92vw;
+  }
 `;
 
 export const Button = styled.button`
@@ -49,6 +67,21 @@ export const Button = styled.button`
   background: rgba(88, 88, 88, 0.5);
   backdrop-filter: blur(14px);
   padding: 0.87rem;
+`;
+
+export const Figure = styled.figure`
+  display: flex;
+  width: 100%;
+  height: 100%;
+   max-height: 40px;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 `;
 
 export const Dots = styled.div`

@@ -1,96 +1,122 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 type ContainerProps = {
-    $marginBottom: number
-}
+  $marginBottom: number;
+};
 
 export const Container = styled.div<ContainerProps>`
-    max-width: 80rem;
-    margin-inline: auto;
+  max-width: 80rem;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-block: ${({ $marginBottom }) => `${$marginBottom}rem`};
+
+  @media (max-width: 768px) {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    margin-block: ${({ $marginBottom }) => `${$marginBottom}rem`};
+    flex-direction: column;
+    margin-block: 0;
+  }
 
-    > img {
-        position: absolute;
-        height: 14.77613rem;
-        width: 14.77613rem;
-        opacity: 0.1;
-        z-index: -10;
-        top: 5.5rem;
-        left: 50%;
-        transform: translateX(-50%);
+  > img {
+    position: absolute;
+    height: 14.77613rem;
+    width: 14.77613rem;
+    opacity: 0.1;
+    z-index: -10;
+    top: 5.5rem;
+    left: 50%;
+    transform: translateX(-50%);
 
-        &:nth-child(1) {
-            transform: scaleX(-1);
-            margin-inline-start: -15.17613rem; 
-        }
-
-        &:nth-child(2) {
-            margin-inline-start: 7.788065rem; 
-        }
+    &:nth-child(1) {
+      transform: scaleX(-1);
+      margin-inline-start: -15.17613rem;
     }
-`
+
+    &:nth-child(2) {
+      margin-inline-start: 7.788065rem;
+    }
+  }
+`;
 
 type MockupProps = {
-    $backgroundImage: string
-}
+  $backgroundImage: string;
+};
 
 export const Mockup = styled.div<MockupProps>`
-    width: 30rem; 
-    height: 45rem;
-    overflow: hidden;
-    position: relative;
+  width: 30rem;
+  height: 45rem;
+  overflow: hidden;
+  position: relative;
 
-    &::before {
-        content: "";
-        width: 51.375rem; 
-        height: 45rem;
-        background-image: url(${(props) => props.$backgroundImage});
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: absolute;
-        transform: translate(-119px);
+  @media (max-width: 768px) {
+    width: 18rem;
+    height: 27rem;
+    transform: scale(0.8);
+  }
+
+  &::before {
+    content: "";
+    width: 51.375rem;
+    height: 45rem;
+    background-image: url(${(props) => props.$backgroundImage});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    transform: translate(-119px);
+
+    @media (max-width: 768px) {
+      width: 30.825rem;
+      height: 27rem;
+      transform: translate(-72px);
     }
-`
+  }
+`;
 
 export const Content = styled.div`
-    display: flex;
-    max-width: 36.25rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2.5rem;
+  display: flex;
+  max-width: 36.25rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
 
-    > h2 {
-        color: var(--Neutral-White, #FFF);
+  > h2 {
+    color: var(--Neutral-White, #fff);
 
-        /* Size 80/Bold Compact */
-        font-family: "Noto Sans";
-        font-size: 2.8125rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 110%; /* 3.09375rem */
-        letter-spacing: -0.1125rem;
+    /* Size 80/Bold Compact */
+    font-family: "Noto Sans";
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 3.09375rem */
+    letter-spacing: -0.1125rem;
+
+    @media (max-width: 768px) {
+      font-size: ${({ theme }) => theme["font-size"][60]};
     }
+  }
 
-    > p {
-        color: var(--Primary-Light, #EEE4DF);
+  > p {
+    color: var(--Primary-Light, #eee4df);
 
-        /* Size 60/Medium Compact */
-        font-family: "Noto Sans";
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 110%; /* 1.65rem */
-        letter-spacing: -0.06rem;
+    /* Size 60/Medium Compact */
+    font-family: "Noto Sans";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 1.65rem */
+    letter-spacing: -0.06rem;
+
+    @media (max-width: 768px) {
+      font-size: ${({ theme }) => theme["font-size"][50]};
     }
-`
+  }
+`;
 
 export const Actions = styled.div`
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-`
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+`;

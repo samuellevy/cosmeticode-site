@@ -11,6 +11,7 @@
     "dependencies": {
         "@radix-ui/react-accordion": "^1.2.12",
         "embla-carousel-react": "^8.6.0",
+        "lucide-react": "^0.545.0",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "react-inlinesvg": "^4.2.0",

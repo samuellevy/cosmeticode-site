@@ -1,4 +1,8 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from "styled-components";
+
+interface DesktopOnlyProps {
+  display?: "block" | "flex";
+}
 
 export const GlobalStyle = createGlobalStyle`
     *, *::before, *::after {
@@ -18,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         min-height: 100dvh;
 
-        background-color: ${({ theme }) => theme.colors['neutral-60']};
+        background-color: ${({ theme }) => theme.colors["neutral-60"]};
     }
 
     button {
@@ -44,4 +48,20 @@ export const GlobalStyle = createGlobalStyle`
         font-size: inherit;
         font-weight: inherit;
     }
-`
+`;
+
+export const MobileOnly = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+export const DesktopOnly = styled.div<DesktopOnlyProps>`
+  display: ${({ display = "block" }) => display};
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;

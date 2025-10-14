@@ -1,28 +1,46 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
-    /* Box Model */
-    margin-inline: auto;
-    max-width: 80rem;
-    margin-block-end: 7rem;
-`
+  /* Box Model */
+  margin-inline: auto;
+  max-width: 80rem;
+  margin-block-end: 7rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 7rem;
+  }
+`;
 
 export const Content = styled.div`
-    /* Box Model */
-    padding-block-start: 12.94rem;
-    height: 46.125rem;
-    /* Visual */
-    position: relative;
-`
+  /* Box Model */
+  padding-block-start: 12.94rem;
+  height: 46.125rem;
+  /* Visual */
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+`;
 
 export const Mockup = styled.img`
-    /* Box Model */
-    width: 43.125rem;
-    height: 43.125rem;
-    /* Layout */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99;
-`
+  /* Box Model */
+  width: 43.125rem;
+  height: 43.125rem;
+  /* Layout */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+
+  @media (max-width: 768px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+`;
