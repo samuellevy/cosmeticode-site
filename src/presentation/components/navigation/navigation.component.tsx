@@ -52,7 +52,7 @@ export const Navigation = () => {
           </HamburgerMenuButtonBox>
 
           <Actions>
-            <a href="/" rel="noopener noreferrer" target="_blank">
+            <a href="https://app.cosmeticode.com/login" rel="noopener noreferrer" target="_blank">
               Entrar
             </a>
 
